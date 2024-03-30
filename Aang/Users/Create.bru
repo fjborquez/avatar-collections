@@ -1,0 +1,22 @@
+meta {
+  name: Create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/api/user
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  name: TESTING
+  lastname: TESTING
+  email: email@movistar.com
+  password: testinga1$A
+}
+
+assert {
+  res.body: eq User added
+}
