@@ -1,0 +1,31 @@
+meta {
+  name: Update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{url}}/api/user/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Nombre",
+    "lastname": "Apellido",
+    "password": "P455w0rd!!!",
+    "email": "email@vtr.cl"
+  }
+}
+
+body:multipart-form {
+  name: TESTING
+  lastname: TESTING
+  email: email@movistar.com
+  password: testinga1$A
+}
+
+assert {
+  res.body: eq User added
+}
