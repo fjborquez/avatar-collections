@@ -1,0 +1,39 @@
+meta {
+  name: Update
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{url}}/api/user/1/user-profile
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "date_of_birth": "2010-03-10",
+    "is_vegetarian": 1, 
+    "is_vegan": 1,
+    "is_celiac": 0,
+    "is_keto": 0,
+    "is_diabetic": 1,
+    "is_lactose": 0, 
+    "is_gluten": 1
+  }
+}
+
+body:multipart-form {
+  date_of_birth: 1980-01-01
+  is_vegetarian: 0
+  is_vegan: 0
+  is_celiac: 0
+  is_keto: 0
+  is_diabetic: 0
+  is_lactose: 0
+  is_gluten: 0
+}
+
+assert {
+  res.body: eq User profile added
+}
