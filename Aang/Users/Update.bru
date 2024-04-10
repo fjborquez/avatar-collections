@@ -12,10 +12,9 @@ put {
 
 body:json {
   {
-    "name": "Nombre",
-    "lastname": "Apellido",
     "password": "P455w0rd!!!",
-    "email": "email@vtr.cl"
+    "email": "email@vtr.cl",
+    "person_id": 1
   }
 }
 
@@ -27,5 +26,5 @@ body:multipart-form {
 }
 
 assert {
-  res.body: eq User added
+  res.body: eq User updated
 }
