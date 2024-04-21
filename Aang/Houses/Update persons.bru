@@ -1,10 +1,10 @@
 meta {
-  name: Add persons
+  name: Update persons
   type: http
-  seq: 2
+  seq: 5
 }
 
-post {
+put {
   url: {{url}}/api/house/1/person
   body: json
   auth: none
@@ -13,13 +13,7 @@ post {
 body:json {
   {
     "persons": {
-      "1": {
-        "is_default": false
-      },
       "3": {
-        "is_default": false
-      },
-      "2": {
         "is_default": false
       }
     }
