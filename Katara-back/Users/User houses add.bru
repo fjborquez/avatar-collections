@@ -1,0 +1,17 @@
+meta {
+  name: User houses add
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{url}}/api/user/4/houses
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  description: Gengar
+  city_id: 1
+  is_default: 0
+}
