@@ -1,0 +1,30 @@
+meta {
+  name: User houses residents update
+  type: http
+  seq: 14
+}
+
+put {
+  url: {{url}}/api/user/1/houses/3/residents/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "TEST BY BRUNO",
+    "lastname": "TEST BY BRUNO",
+    "date_of_birth": "01/01/1980",
+    "nutritional_profile": []
+  }
+}
+
+body:multipart-form {
+  name: TEST
+  lastname: TEST
+  date_of_birth: 03/07/1990
+  nutritional_profile[3]: 3
+  ~nutritional_profile[4]: 4
+  ~nutritional_profile[5]: 5
+  ~: 
+}
