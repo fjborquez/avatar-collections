@@ -1,0 +1,22 @@
+meta {
+  name: 002 - Add
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/api/house
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  city_id: 1
+  description: Beach house
+}
+
+assert {
+  res.status: eq 201
+  res.headers.location: isDefined
+  res.body: isEmpty
+}

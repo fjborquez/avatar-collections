@@ -1,0 +1,16 @@
+meta {
+  name: 009 - Get persons
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{url}}/api/house/1/person
+  body: none
+  auth: none
+}
+
+assert {
+  res.body: isDefined 
+  res.status: eq 200
+}

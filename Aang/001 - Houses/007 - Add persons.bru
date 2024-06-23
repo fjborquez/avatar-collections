@@ -1,0 +1,32 @@
+meta {
+  name: 007 - Add persons
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{url}}/api/house/1/person
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "persons": {
+      "1": {
+        "is_default": false
+      },
+      "3": {
+        "is_default": false
+      },
+      "2": {
+        "is_default": false
+      }
+    }
+  }
+}
+
+assert {
+  res.body: isEmpty
+  res.status: eq 204
+}

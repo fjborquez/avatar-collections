@@ -1,0 +1,16 @@
+meta {
+  name: 004 - Get
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{url}}/api/person/1
+  body: none
+  auth: none
+}
+
+assert {
+  res.body: isDefined
+  res.status: eq 200
+}

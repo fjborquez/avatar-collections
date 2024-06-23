@@ -1,0 +1,35 @@
+meta {
+  name: 006 - Add houses
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{url}}/api/person/2/house
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "houses": {
+      "1": {
+        "is_default": false,
+        "house_role_id": 1
+      },
+      "3": {
+        "is_default": false,
+        "house_role_id": 1
+      },
+      "2": {
+        "is_default": false,
+        "house_role_id": 1
+      }
+    }
+  }
+}
+
+assert {
+  res.body: isEmpty 
+  res.status: eq 204
+}

@@ -1,0 +1,16 @@
+meta {
+  name: 003 - List
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}/api/person
+  body: none
+  auth: none
+}
+
+assert {
+  res.body: isDefined 
+  res.status: eq 200
+}

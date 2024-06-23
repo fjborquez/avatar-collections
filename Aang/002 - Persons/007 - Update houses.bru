@@ -1,0 +1,29 @@
+meta {
+  name: 007 - Update houses
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{url}}/api/person/1/house
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "houses": {
+      "1": {
+        "is_default": false
+      },
+      "6": {
+        "is_default": true
+      }
+    }
+  }
+}
+
+assert {
+  res.body: isEmpty 
+  res.status: eq 204
+}

@@ -1,0 +1,20 @@
+meta {
+  name: 005 - Delete
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{url}}/api/person/1
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  : 
+}
+
+assert {
+  res.body: isEmpty 
+  res.status: eq 204
+}

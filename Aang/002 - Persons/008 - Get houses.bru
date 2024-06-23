@@ -1,0 +1,16 @@
+meta {
+  name: 008 - Get houses
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{url}}/api/person/1/house
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body: isEmpty
+}

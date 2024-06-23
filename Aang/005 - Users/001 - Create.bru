@@ -1,0 +1,23 @@
+meta {
+  name: 001 - Create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/api/user
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  password: P455w0rd!!
+  email: fborquez32432412@outlook.com
+  person_id: 1
+}
+
+assert {
+  res.body: isEmpty
+  res.status: eq 201
+  res.headers.location: isDefined
+}
