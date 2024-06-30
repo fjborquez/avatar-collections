@@ -1,11 +1,16 @@
 meta {
-  name: User update
+  name: 003 - List
   type: http
   seq: 3
 }
 
-put {
+get {
   url: {{url}}/api/user
   body: none
   auth: none
+}
+
+assert {
+  res.body: isDefined 
+  res.status: eq 200
 }

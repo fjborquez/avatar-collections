@@ -1,0 +1,33 @@
+meta {
+  name: 004 - Update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{url}}/api/user/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "HOLA",
+    "lastname": "CHAO",
+    "date_of_birth": "07/07/1990",
+    "email": "prueba21@outlook.com",
+    "password": "!Prueba10$",
+    "nutritionalProfile": [
+      1,2,3
+    ]
+  }
+}
+
+body:multipart-form {
+  : 
+}
+
+assert {
+  res.body: isDefined 
+  res.status: eq 200
+}
