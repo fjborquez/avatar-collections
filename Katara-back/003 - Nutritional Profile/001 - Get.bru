@@ -1,0 +1,16 @@
+meta {
+  name: 001 - Get
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/api/user/2/nutritional-profile
+  body: none
+  auth: none
+}
+
+assert {
+  res.body: isDefined 
+  res.status: eq 200
+}

@@ -1,7 +1,7 @@
 meta {
-  name: User houses residents update
+  name: 004 - Update
   type: http
-  seq: 8
+  seq: 4
 }
 
 put {
@@ -15,7 +15,7 @@ body:json {
     "name": "TEST BY BRUNO",
     "lastname": "TEST BY BRUNO",
     "date_of_birth": "01/01/1980",
-    "nutritional_profile": []
+    "nutritionalProfile": []
   }
 }
 
@@ -27,4 +27,9 @@ body:multipart-form {
   ~nutritional_profile[4]: 4
   ~nutritional_profile[5]: 5
   ~: 
+}
+
+assert {
+  res.body: isEmpty
+  res.status: eq 204
 }

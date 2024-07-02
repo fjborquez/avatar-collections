@@ -1,5 +1,5 @@
 meta {
-  name: User houses
+  name: 002 - List
   type: http
   seq: 2
 }
@@ -8,4 +8,9 @@ get {
   url: {{url}}/api/user/1/houses
   body: none
   auth: none
+}
+
+assert {
+  res.body: isDefined
+  res.status: eq 200
 }

@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: {{url}}/api/user
+  url: {{url}}/api/user/1/houses/1/residents
   body: multipartForm
   auth: none
 }
@@ -13,10 +13,14 @@ post {
 body:multipart-form {
   name: TEST
   lastname: TEST
-  date_of_birth: 01/01/1980
-  email: test@outlook.com
-  password: P4$5w0rd!!
+  date_of_birth: 03/07/1990
   nutritionalProfile[0]: 1
   nutritionalProfile[1]: 2
   nutritionalProfile[2]: 3
+  ~: 
+}
+
+assert {
+  res.body: isDefined
+  res.status: eq 200
 }

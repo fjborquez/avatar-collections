@@ -5,12 +5,12 @@ meta {
 }
 
 get {
-  url: {{url}}/api/user/1
+  url: {{url}}/api/user/1/houses/1/residents/1
   body: none
   auth: none
 }
 
 assert {
-  res.body: isDefined
+  res.body: isDefined 
   res.status: eq 200
 }

@@ -1,11 +1,16 @@
 meta {
-  name: User house disable
+  name: 004- Disable
   type: http
-  seq: 5
+  seq: 4
 }
 
 put {
   url: {{url}}/api/user/1/houses/1/disable
   body: none
   auth: none
+}
+
+assert {
+  res.body: isDefined 
+  res.status: eq 200
 }

@@ -1,0 +1,22 @@
+meta {
+  name: 001 - Create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/api/user/1/houses
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  description: Porigon 4
+  city_id: 1
+  is_default: 0
+}
+
+assert {
+  res.body: isDefined 
+  res.status: eq 201
+}

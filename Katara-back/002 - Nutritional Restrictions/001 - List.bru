@@ -1,5 +1,5 @@
 meta {
-  name: Nutritional Restrictions List
+  name: 001 - List
   type: http
   seq: 1
 }
@@ -12,4 +12,9 @@ get {
 
 headers {
   Content-Type: application/json
+}
+
+assert {
+  res.body: isDefined 
+  res.status: eq 200
 }
