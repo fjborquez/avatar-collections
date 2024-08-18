@@ -14,9 +14,12 @@ body:multipart-form {
   name: TEST
   lastname: TEST
   date_of_birth: 01/01/1980
-  email: test@outlook.com
+  email: test24@outlook.com
   password: P4$5w0rd!!
-  nutritionalProfile[0]: 1
-  nutritionalProfile[1]: 2
-  nutritionalProfile[2]: 3
+  nutritionalProfile[0][product_category_id]: 1
+  nutritionalProfile[0][product_category_name]: Bakery
+  nutritionalProfile[0][consumption_level_id]: 3
+  nutritionalProfile[1][product_category_name]: Fruits and Vegetables
+  nutritionalProfile[1][consumption_level_id]: 1
+  nutritionalProfile[1][product_category_id]: 4
 }
