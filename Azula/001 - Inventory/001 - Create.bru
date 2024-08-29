@@ -1,0 +1,20 @@
+meta {
+  name: 001 - Create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/api/inventory
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  quantity: 1
+  catalog_id: 1
+  catalog_description: catalog description
+  category_id: 1
+  category_name: Beverage
+  purchase_date: 2024-05-01
+}
