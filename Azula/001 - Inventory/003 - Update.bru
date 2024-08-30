@@ -1,0 +1,29 @@
+meta {
+  name: 003 - Update
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{url}}/api/inventory/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "quantity": 450,
+    "catalog_id": 1,
+    "catalog_description": "description",
+    "category_id": 1,
+    "category_name": "name"
+  }
+}
+
+body:multipart-form {
+  quantity: 20
+  catalog_id: 1
+  catalog_description: description
+  category_id: 1
+  category_name: category
+}
