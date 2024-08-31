@@ -1,0 +1,26 @@
+meta {
+  name: 001 - Create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/api/inventory
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  house_id: 1
+  quantity: 3
+  catalog_id: 1
+  catalog_description: A PRODUCT DESCRIPTION
+  category_id: 1
+  category_name: Bakery
+  uom_id: 1
+  uom_abbreviation: mg
+  purchase_date: 2024-08-31
+  expiration_date: 2024-09-30
+  brand_id: 1
+  brand_name: Ideal
+}
