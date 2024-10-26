@@ -1,0 +1,16 @@
+meta {
+  name: 005 - Inventory
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{url}}/api/user/1/houses/1/inventory
+  body: none
+  auth: none
+}
+
+assert {
+  res.body: isDefined
+  res.status: eq 200
+}
