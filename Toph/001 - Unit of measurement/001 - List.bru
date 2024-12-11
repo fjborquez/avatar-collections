@@ -5,12 +5,16 @@ meta {
 }
 
 get {
-  url: {{url}}/api/unit-of-measurement
+  url: {{url}}/api/unit-of-measurement?filter[category.name]=Volume
   body: none
   auth: none
 }
 
+params:query {
+  filter[category.name]: Volume
+}
+
 assert {
-  res.body: isDefined 
+  res.body: isDefined
   res.status: eq 200
 }

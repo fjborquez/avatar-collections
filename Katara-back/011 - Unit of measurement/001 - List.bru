@@ -1,0 +1,15 @@
+meta {
+  name: 001 - List
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/api/unit-of-measurement?filter[category.name]=Mass
+  body: none
+  auth: none
+}
+
+params:query {
+  filter[category.name]: Mass
+}
