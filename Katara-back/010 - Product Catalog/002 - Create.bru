@@ -1,0 +1,23 @@
+meta {
+  name: 002 - Create
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/api/product-catalog
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  category_id: 1
+  brand_id: 1
+  type_id: 1
+  presentation_id: 1
+}
+
+assert {
+  res.body: isDefined
+  res.status: eq 201
+}
