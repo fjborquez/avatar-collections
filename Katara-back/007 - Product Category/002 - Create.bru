@@ -1,0 +1,20 @@
+meta {
+  name: 002 - Create
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/api/product-category
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  name: A CATEGORY
+}
+
+assert {
+  res.status: eq 201
+  res.body: isJson
+}
