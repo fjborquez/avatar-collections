@@ -1,0 +1,27 @@
+meta {
+  name: 006 - Add Inventory
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{url}}/api/user/1/houses/1/inventory
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  quantity: 100
+  expiration_date: 2025-01-01
+  catalog_id: 1
+  catalog_description: A DESCRIPTION
+  category_id: 1
+  category_name: A NAME
+  purchase_date: 2024-12-16
+  brand_id: 1
+  brand_name: A NAME
+  uom_id: 2
+  uom_abbreviation: g
+  house_id: 1
+  house_description: A HOUSE
+}
