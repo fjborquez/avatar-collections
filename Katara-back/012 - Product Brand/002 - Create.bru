@@ -1,0 +1,16 @@
+meta {
+  name: 002 - Create
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/api/product-brand
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  name: A NAME
+  description: A DESCRIPTION
+}
