@@ -1,0 +1,54 @@
+meta {
+  name: 008 - Update inventory
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{url}}/api/user/1/houses/1/inventory/93
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 93,
+    "quantity": 150,
+    "expiration_date": "2025-01-31",
+    "catalog_id": "1",
+    "catalog_description": "A NEW DESCRIPTION",
+    "category_id": "1",
+    "category_name": "A NEW NAME",
+    "purchase_date": "2024-12-16",
+    "brand_id": 1,
+    "brand_name": "A NEW NAME",
+    "uom_id": 2,
+    "uom_abbreviation": "g",
+    "house_id": 1,
+    "house_description": "A NEW DESCRIPTION",
+    "product_status": [
+      {
+        "is_final_phase": 1,
+        "pivot": {
+          "is_active": 1
+        }
+      }
+    ]
+  }
+}
+
+body:multipart-form {
+  quantity: 100
+  expiration_date: 2025-01-01
+  catalog_id: 1
+  catalog_description: A DESCRIPTION
+  category_id: 1
+  category_name: A NAME
+  purchase_date: 2024-12-16
+  brand_id: 1
+  brand_name: A name
+  uom_id: 2
+  uom_abbreviation: g
+  house_id: 1
+  house_description: A HOUSE
+}
