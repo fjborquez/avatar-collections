@@ -1,0 +1,20 @@
+meta {
+  name: 002 - Check
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}/api/auth/token/check
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTc3NDI5MDIxMywiZXhwIjoxODAwMDAwMDAwLCJzY29wZXMiOlsiYWRtaW4iXX0.J9_iDH3I4I0zT0Gru-ziSSmaGb5eNPMBF5mboFfcXb4
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

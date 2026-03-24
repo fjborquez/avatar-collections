@@ -5,7 +5,11 @@ meta {
 }
 
 get {
-  url: {{url}}/api/house
+  url: {{url}}/api/house?filter[persons.user.id]=1
   body: none
   auth: none
+}
+
+params:query {
+  filter[persons.user.id]: 1
 }

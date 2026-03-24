@@ -1,0 +1,28 @@
+meta {
+  name: 001 - Create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/api/auth/token
+  body: multipartForm
+  auth: inherit
+}
+
+body:json {
+  {
+    "username": "ash.ketchum@pokemon.com",
+    "password": "P455w0rd!!!23423423"
+  }
+}
+
+body:multipart-form {
+  email: ash.ketchum@pokemon.com
+  password: ash.ketchum
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
