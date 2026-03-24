@@ -1,0 +1,4 @@
+name: localhost
+variables:
+  - name: url
+    value: http://korra-back.test
